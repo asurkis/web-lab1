@@ -29,21 +29,23 @@ if ($is_request_valid) {
     <p>
         <table>
             <tr>
-                <td> Координата X: </td>
-                <td class="out-number"> <?php echo $x; ?> </td>
+                <td> X </td>
+                <td> Y </td>
+                <td> R </td>
+                <td> Ответ </td>
             </tr>
             <tr>
-                <td> Координата Y: </td>
-                <td class="out-number"> <?php echo $y; ?> </td>
-            </tr>
-            <tr>
-                <td> Радиус: </td>
-                <td class="out-number"> <?php echo $r; ?> </td>
+                <td> <?php echo $x; ?> </td>
+                <td> <?php echo $y; ?> </td>
+                <td> <?php echo $r; ?> </td>
+                <td> <?php if (!$result) {
+                    echo '<strong>не</strong>';
+                } ?> попадает </td>
             </tr>
         </table>
     </p>
 
-    <p>
+    <!-- <p>
         Результат: точка
         <?php
             echo '(', $x, '; ', $y, ') ';
@@ -51,8 +53,9 @@ if ($is_request_valid) {
                 echo '<strong>не</strong>';
             }
         ?>
-        входит в заданную область
-    </p>
+        входит в заданную область радиуса
+        <?php echo $r; ?>
+    </p> -->
 
     <?php
 }

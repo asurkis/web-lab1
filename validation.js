@@ -1,6 +1,7 @@
 const keyList = ['x', 'y', 'r'];
 const inputs = {};
 const markers = {};
+
 for (const key of keyList) {
     inputs[key] = document.getElementById('input-' + key);
     markers[key] = document.getElementById('invalid-' + key);
@@ -8,17 +9,17 @@ for (const key of keyList) {
     inputs[key].addEventListener('input', validateInputs);
 }
 
-function onInputEvent() {
-    validateInputs();
-}
-
 async function validateInputs() {
     const responce = await fetch('./ajax_check.php?' + keyList.map(key => key + '=' + inputs[key].value).join('&'));
     if (responce.ok) {
         const text = await responce.text();
+        let allValid = true;
         for (const key of keyList) {
-            markValid(key, !text.includes(key));
+            const isValid = !text.includes(key);
+            markValid(key, isValid);
+            allValid &= isValid;
         }
+        document.querySelector('input[type="submit"]').disabled = !allValid;
     }
 }
 

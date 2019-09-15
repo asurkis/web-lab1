@@ -6,6 +6,7 @@ include 'input_checker.php';
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <link href="./style.css" rel="stylesheet">
         <script src="./style.css" type="text/css"></script>
         <script src="./validation.js" defer></script>
@@ -15,7 +16,7 @@ include 'input_checker.php';
     <body>
         <div id="title">
             Студент: Суркис Антон Игоревич<br>
-            Группа: P3213<br>
+            Группа:  P3213<br>
             Вариант: 213019<br>
         </div>
         <img src="areas.png"><br>
@@ -77,6 +78,10 @@ include 'input_checker.php';
                 <input type="submit" value="Проверить">
             </div>
         </form>
+
+        <div id="css-demo">
+
+        </div>
 
         <?php
         include 'solver.php';
