@@ -3,6 +3,10 @@ body {
     color: #333;
 }
 
+body > * {
+    margin-left: 5%;
+}
+
 body ::selection {
     background-color: #333;
     color: #eee;

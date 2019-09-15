@@ -20,7 +20,7 @@ include 'input_checker.php';
             Вариант: 213019<br>
         </div>
         <img src="areas.png"><br>
-        <form method="get">
+        <form method="get" autocomplete="off">
             <div>
                 Введите X:
                 <select id="input-x" name="x" required>

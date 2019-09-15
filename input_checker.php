@@ -1,7 +1,7 @@
 <?php
 $input_keys = ['x', 'y', 'r'];
 $input_names = ['x' => 'X', 'y' => 'Y', 'r' => 'R'];
-$regexes = ['x' => '-?[1-4]|0', 'y' => '-?[1-5]([.,]\d*)?|0', 'r' => '[2-5]([.,]\d*)?'];
+$regexes = ['x' => '-?[1-4]|0', 'y' => '(-?[1-5]|0)([.,]\d*)?', 'r' => '[2-5]([.,]\d*)?'];
 
 $is_request_set = TRUE;
 $is_request_valid = TRUE;
