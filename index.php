@@ -8,7 +8,6 @@ include 'input_checker.php';
     <head>
         <meta charset="UTF-8">
         <link href="./style.css" rel="stylesheet">
-        <script src="./style.css" type="text/css"></script>
         <script src="./validation.js" defer></script>
         <title>Лабораторная работа № 1</title>
     </head>
