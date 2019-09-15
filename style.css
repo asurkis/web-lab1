@@ -6,6 +6,14 @@ body {
     text-align: right;
 }
 
-.incorrect-input {
+.invalid-input {
     color: red;
+    visibility: hidden;
+}
+
+#title {
+    text-align: right;
+    font-size: 12pt;
+    font-family: cursive;
+    color: darkblue;
 }

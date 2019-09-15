@@ -1,8 +1,8 @@
 <?php
-if ($is_request_correct) {
-    $x = (real) $_GET['x'];
-    $y = (real) $_GET['y'];
-    $r = (real) $_GET['r'];
+if ($is_request_valid) {
+    $x = (real) str_replace(',', '.', $_GET['x']);
+    $y = (real) str_replace(',', '.', $_GET['y']);
+    $r = (real) str_replace(',', '.', $_GET['r']);
 
     $result = TRUE;
     if ($x > 0) {

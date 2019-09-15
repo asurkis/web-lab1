@@ -9,18 +9,24 @@ include 'input_checker.php';
         <link href="./style.css" rel="stylesheet">
         <script src="./style.css" type="text/css"></script>
         <script src="./validation.js" defer></script>
+        <title>Лабораторная работа № 1</title>
     </head>
 
     <body>
+        <div id="title">
+            Студент: Суркис Антон Игоревич<br>
+            Группа: P3213<br>
+            Вариант: 213019<br>
+        </div>
         <img src="areas.png"><br>
         <form method="get">
             <div>
-                Введите x:
-                <select name="x" required>
+                Введите X:
+                <select id="input-x" name="x" required>
                     <?php
                     for ($i = -4; $i <= 4; $i++) {
                         echo '<option value="', $i, '"';
-                        if ($is_value_correct['x']) {
+                        if ($is_value_valid['x']) {
                             if ("$i" === $_GET['x']) {
                                 echo ' selected';
                             }
@@ -31,41 +37,41 @@ include 'input_checker.php';
                     } ?>
                 </select>
 
-                <?php
-                if ($is_key_set['x'] && !$is_value_correct['x']) {
-                    ?>
-                    <span class="incorrect-input"> Введите корректное значение </span>
-                    <?php
-                }
-                ?>
+                <span id="invalid-x" class="invalid-input" <?php
+                    if ($is_key_set['x'] && !$is_value_valid['x']) {
+                        echo 'style="visibility: visible"';
+                    }
+                ?>>
+                    Выберите число из списка
+                </span>
             </div>
             <div>
-                Введите y:
-                <input type="number" name="y" min="-5" max="5" value="<?php
-                    echo $is_value_correct['y'] ? $_GET['y'] : '0';
+                Введите Y:
+                <input id="input-y" type="text" name="y" value="<?php
+                    echo $is_value_valid['y'] ? $_GET['y'] : '0';
                 ?>" required>
 
-                <?php
-                if ($is_key_set['y'] && !$is_value_correct['y']) {
-                    ?>
-                    <span class="incorrect-input"> Введите корректное значение </span>
-                    <?php
-                }
-                ?>
+                <span id="invalid-y" class="invalid-input" <?php
+                    if ($is_key_set['y'] && !$is_value_valid['y']) {
+                        echo 'style="visibility: visible"';
+                    }
+                ?>>
+                    Введите число от -5 до 5
+                </span>
             </div>
             <div>
                 Введите R:
-                <input type="number" name="r" min="2" max="5" value="<?php
-                    echo $is_value_correct['r'] ? $_GET['r'] : '3';
+                <input id="input-r" type="text" name="r" value="<?php
+                    echo $is_value_valid['r'] ? $_GET['r'] : '3';
                 ?>" required>
 
-                <?php
-                if ($is_key_set['r'] && !$is_value_correct['r']) {
-                    ?>
-                    <span class="incorrect-input"> Введите корректное значение </span>
-                    <?php
-                }
-                ?>
+                <span id="invalid-r" class="invalid-input" <?php
+                    if ($is_key_set['r'] && !$is_value_valid['r']) {
+                        echo 'style="visibility: visible"';
+                    }
+                ?>>
+                    Введите число от 2 до 5
+                </span>
             </div>
             <div>
                 <input type="submit" value="Проверить">
