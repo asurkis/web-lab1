@@ -26,7 +26,7 @@ if ($is_request_valid) {
     }
 
     ?>
-    <p>
+    <div>
         <table>
             <tr>
                 <td> X </td>
@@ -43,9 +43,9 @@ if ($is_request_valid) {
                 } ?> попадает </td>
             </tr>
         </table>
-    </p>
+    </div>
 
-    <!-- <p>
+    <!-- <div>
         Результат: точка
         <?php
             echo '(', $x, '; ', $y, ') ';
@@ -55,7 +55,7 @@ if ($is_request_valid) {
         ?>
         входит в заданную область радиуса
         <?php echo $r; ?>
-    </p> -->
+    </div> -->
 
     <?php
 }
