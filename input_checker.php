@@ -8,6 +8,9 @@ $is_request_valid = TRUE;
 $is_key_set = [];
 $is_value_valid = [];
 
+$are_cookies_valid = isset($_COOKIE['saved_results'])
+    && preg_match("/^(${regexes['x']};${regexes['y']};${regexes['r']};[01]:)*$/", $_COOKIE['saved_results']);
+
 foreach ($input_keys as $key) {
     $is_key_set[$key] = isset($_GET[$key]);
     $is_request_set &= $is_key_set[$key];

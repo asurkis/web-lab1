@@ -1,6 +1,7 @@
 <?php
 $ru_start = getrusage();
 include 'input_checker.php';
+include 'solver.php';
 ?>
 
 <!DOCTYPE html>
@@ -78,12 +79,8 @@ include 'input_checker.php';
             </div>
         </form>
 
-        <div id="css-demo">
-
-        </div>
-
         <?php
-        include 'solver.php';
+        include 'table_out.php';
 
         function get_microseconds($ru, $index) {
             return $ru["ru_$index.tv_sec"] * 1000000 + $ru["ru_$index.tv_usec"];

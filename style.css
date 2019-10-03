@@ -30,8 +30,16 @@ input[type=submit] {
     width: 20%;
 }
 
+.table-header {
+    text-align: center;
+}
+
 .out-number {
     text-align: right;
+}
+
+.last-row {
+    background-color: #faa;
 }
 
 .invalid-input {

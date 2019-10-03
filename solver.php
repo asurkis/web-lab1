@@ -1,4 +1,9 @@
 <?php
+$cookie_table = '';
+if ($are_cookies_valid) {
+    $cookie_table = $_COOKIE['saved_results'];
+}
+
 if ($is_request_valid) {
     $x = (real) str_replace(',', '.', $_GET['x']);
     $y = (real) str_replace(',', '.', $_GET['y']);
@@ -25,38 +30,6 @@ if ($is_request_valid) {
         $result = (-$r <= $y) && ($y <= $r);
     }
 
-    ?>
-    <div>
-        <table>
-            <tr>
-                <td> X </td>
-                <td> Y </td>
-                <td> R </td>
-                <td> Ответ </td>
-            </tr>
-            <tr>
-                <td> <?php echo $x; ?> </td>
-                <td> <?php echo $y; ?> </td>
-                <td> <?php echo $r; ?> </td>
-                <td> <?php if (!$result) {
-                    echo '<strong>не</strong>';
-                } ?> попадает </td>
-            </tr>
-        </table>
-    </div>
-
-    <!-- <div>
-        Результат: точка
-        <?php
-            echo '(', $x, '; ', $y, ') ';
-            if (!$result) {
-                echo '<strong>не</strong>';
-            }
-        ?>
-        входит в заданную область радиуса
-        <?php echo $r; ?>
-    </div> -->
-
-    <?php
-}
-?>
+    $cookie_table = $cookie_table . "$x;$y;$r;" . ($result ? '1' : '0') . ":";
+    setcookie('saved_results', $cookie_table, time() + 24 * 30 * 60 * 60);
+} ?>
