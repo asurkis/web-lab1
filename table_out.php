@@ -26,3 +26,7 @@
         ?>
     </table>
 </div>
+
+<form method="get">
+    <input type="submit" name="reset" value="Очистить">
+</form>

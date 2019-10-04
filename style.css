@@ -30,6 +30,10 @@ input[type=submit] {
     width: 20%;
 }
 
+input[type=submit][name=reset] {
+    width: inherit;
+}
+
 .table-header {
     text-align: center;
 }

@@ -31,5 +31,7 @@ if ($is_request_valid) {
     }
 
     $cookie_table = $cookie_table . "$x;$y;$r;" . ($result ? '1' : '0') . ":";
-    setcookie('saved_results', $cookie_table, time() + 24 * 30 * 60 * 60);
-} ?>
+}
+
+setcookie('saved_results', $cookie_table, time() + 24 * 60 * 60);
+?>
